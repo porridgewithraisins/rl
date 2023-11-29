@@ -1,0 +1,23 @@
+When (e-greedy, 3,6, wind) -> (alpha = 0.01, gamma = 1.0, e/tau = 0.001)
+fluctuating rewards/steps, goal state (9, 0) with a fuzzy path (effect of wind)
+
+When (e-greedy, 3,6, no wind) -> (alpha = 0.1, gamma = 1.0, e/tau = 0.001)
+early plateaued rewards/steps, goal state (7, 8) with a clean path.
+
+When (softmax, 3,6, wind) -> (alpha = 1.0, gamma = 0.8, e/tau = 0.01)
+rewards/steps, but less than with e-greedy, goal state was (9, 0) with wind effect, but _less_ than with the first case.
+
+When (softmax, 3,6, no wind) -> (alpha = 1.0, gamma = 0.8, e/tau = 0.1)
+very early plateaued rewards/steps, focussed path to (7, 8)
+
+When (e-greedy, 0,4, wind) -> (alpha = 0.1, gamma = 1.0, e/tau = 0.001)
+rewards/steps, heavy effect of wind, went to the (2, 2) goal state.
+
+When (e-greedy, 0,4, no wind) -> (alpha = 0.1, gamma = 1.0, e/tau = 0.001)
+plateaued rewards/steps, very focussed and equal state visit counts, went to the (2, 2) goal state
+
+When (softmax, 0,4, wind) -> (alpha = 1.0, gamma = 1.0, e/tau = 0.1)
+fluctuating rewards/steps, again, tendency to veer off the edge, went to (2, 2) goal state
+
+When (softmax, 0,4, no wind) -> (alpha = 1.0, gamma = 1.0, e/tau = 0.01)
+quick rewards/steps plateau, went to (7, 8) goal state, with very equal and focussed state visit counts.

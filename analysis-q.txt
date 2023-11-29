@@ -1,0 +1,30 @@
+When (e-greedy, 3,6, p=1) -> (0.1, 1.0, 0.001)
+Quick plateau in rewards/steps, slight fluctuations after
+Focussed path to (7, 8).
+
+When (e-greedy, 3,6, p=0.7) -> (0.01, 0.9, 0.001)
+Highly fluctuating rewards/steps, very haphazard state
+visit counts with lots of exploration to the goal state (7, 8)
+
+When (softmax, 3,6, p=1) -> (1.0, 0.9, 0.01)
+Very quick plateau and no fluctuations after in rewards/steps.
+Very focussed path to (7, 8) - all cells have ~1000 visit count.
+
+When (softmax, 3,6, p=0.7) -> (0.1, 1.0, 2)
+Lots of fluctuation in rewards/steps, lots of exploration in state visit counts.
+
+When (e-greedy, 0,4, p=1) -> (0.1, 1.0, 0.001)
+Decently quick plateau in rewards/steps, no fluctuations after.
+Very focussed path to (2, 2) - ~ 1000 visits to each state.
+
+When (e-greedy, 0,4, p=0.7) -> (0.1, 0.9, 0.001)
+Lots of fluctuations in rewards/steps, lots of exploration,
+with lots of veering off the edge so reset to start state, so took longer as well.
+ended at (2, 2) goal state
+
+When (softmax, 0,4, p=1) -> (1.0, 1.0, 0.1)
+90deg plateau and no fluctuations after. Went with a fully focussed path all the way down to (7, 8).
+
+When (softmax, 0,4, p=0.7) -> (0.1, 0.9, 0.1)
+Lots of fluctuations in rewards/steps. Lots of veering off the edge.
+More exploration. ended at (2, 2) goal state.
